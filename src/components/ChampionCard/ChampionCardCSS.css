@@ -1,0 +1,67 @@
+.Card
+{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    margin: 2%;
+    width: 14vh;
+    border-color: black;
+    border: solid;
+    border-width: 3px;
+    text-align: center;
+    box-shadow: 2px 3px 5px black;
+    animation-name: popup;
+    animation-duration:1.25s;
+    position: relative;
+    border-radius: 20px;
+    background:linear-gradient(to bottom, #000000 0, #000000 90%, #373636 100%);
+    
+
+    
+}
+
+.ChampionCardBackground {
+    border-radius: 15px;
+    margin-bottom: 5%;
+    height: 75%;
+}
+
+
+@keyframes popup{
+   from {width: 0px;}
+   to {width: 110px;} 
+}
+
+@keyframes popup2{
+    from {width: 0%;}
+    to {width: 100%;} 
+ }
+
+
+.ChampionCardStyle :hover 
+
+{
+    transition: all 1.75s;
+    transform: scale(1.035);
+
+}
+
+
+
+
+
+h2,p
+{
+    position: relative;
+    bottom: 0px;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-size: 1.7vh;
+    text-align:bottom;
+    animation-name: popuptext;
+    transform-origin: center;
+    animation-duration:2.25s;
+    user-select: none;
+    font-weight: bold;
+    transition-delay: 5s;
+}
