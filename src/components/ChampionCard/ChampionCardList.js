@@ -1,32 +1,34 @@
-import React from 'react'
-import { ChampionCard } from './ChampionCard';
 import './ChampionCardListCSS.css';
+import './ChampionCardCSS.css';
 
-const ChampionCardList = ({ Champions }) =>{
+import { ChampionCard } from './ChampionCard';
+import React from 'react'
 
-    const ChampionArray = Champions.map((Champion, i) =>{
+const ChampionCardList = ({ Champions }) => {
+
+    const ChampionArray = Champions.map((champion, i) => {
         return (
 
-            <ChampionCard 
-            key={i} 
-            name={Champions[i].name} 
-            title={Champions[i].title}
-            image={Champions[i].image}
-            id={Champions[i].id}
+            <ChampionCard
+                key={i}
+                name={Champions[i].name}
+                title={Champions[i].title}
+                image={Champions[i].image}
+                id={Champions[i].id}
             />
-            
-            )
+
+        )
 
 
     });
 
 
-    
+
     return (
-        <div className='ChampionCardStyle' style={{display: 'flex', flexDirection:'row', flexWrap:'wrap'}}>
-           {ChampionArray}
+        <div className='ChampionCardStyle' id='hoverable' style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            {ChampionArray}
         </div>
     )
 }
 
-export {ChampionCardList};
+export { ChampionCardList };

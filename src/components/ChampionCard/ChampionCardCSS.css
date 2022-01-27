@@ -24,18 +24,26 @@
     border-radius: 15px;
     margin-bottom: 5%;
     height: 75%;
+    user-select: none;
 }
 
 
 @keyframes popup{
    from {width: 0px;}
-   to {width: 110px;} 
+   to {width: 14vh;} 
 }
 
-@keyframes popup2{
-    from {width: 0%;}
-    to {width: 100%;} 
+@keyframes popuptext1{
+    from {height: 0;}
+    to {height: auto;} 
  }
+
+
+ @keyframes popuptext2{
+    from {color: rgba(255, 0, 0, 0);}
+    to {color: rgb(255, 255, 255);} 
+ }
+
 
 
 .ChampionCardStyle :hover 
@@ -46,10 +54,6 @@
 
 }
 
-
-
-
-
 h2,p
 {
     position: relative;
@@ -58,10 +62,11 @@ h2,p
     color: rgb(255, 255, 255);
     font-size: 1.7vh;
     text-align:bottom;
-    animation-name: popuptext;
     transform-origin: center;
-    animation-duration:2.25s;
+    animation-duration: 6s;
+    animation-name: popuptext1;
+    animation-name: popuptext2;
     user-select: none;
     font-weight: bold;
-    transition-delay: 5s;
+    pointer-events: none !important;
 }

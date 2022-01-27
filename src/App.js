@@ -1,25 +1,34 @@
-import { Menu } from './components/Menu/Menu';
-import { ChampionCardList } from './components/ChampionCard/ChampionCardList';
-import Background from './components/Background/Background';
-import { useState, useEffect } from 'react';
-import Axios from 'axios';
-import { connect } from 'react-redux';
 import './App.css'
-import { setSearchField } from './actions';
+
+import { handleDropdownClick, setSearchField } from './actions';
+import { useEffect, useState } from 'react';
+
+import Axios from 'axios';
+import Background from './components/Background/Background';
+import { ChampionCardList } from './components/ChampionCard/ChampionCardList';
+import { DROP_MENU_TOGGLE } from './constants'
+import { Menu } from './components/Menu/Menu';
+import React from 'react';
+import { click } from '@testing-library/user-event/dist/click';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.searchField
+    searchField: state.searchChampions.searchField,
+    isDropdownvisible: state.toggleDropdown.isDropdownvisible
+
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    handleDropdownClick: () => dispatch(handleDropdownClick())
+
   }
 }
 
 function App(props) {
-  const { onSearchChange, searchField } = props;
+  const { onSearchChange, searchField, isDropdownvisible, handleDropdownClick } = props;
 
   const [championsDisplay, setChampionDisplay] = useState([]);
   // const [searchValue, setSearchValue] = useState('');
@@ -49,9 +58,11 @@ function App(props) {
     )
   }
 
+
+
   useEffect(() =>
     getChampions(), []
-  );
+  )
 
   // const onSearchChange = (event) => {
   //   setSearchValue(event.target.value);
@@ -66,9 +77,11 @@ function App(props) {
 
   return (
     <div className='Content'>
-      <Menu onSearchChange={onSearchChange} />
+      <Menu onSearchChange={onSearchChange} handleDropdownClick={handleDropdownClick} />
       <Background />
       <ChampionCardList Champions={ChampionFilter} />
+      {console.log('1', isDropdownvisible)}
+      {console.log('2', DROP_MENU_TOGGLE)}
     </div>
 
   );

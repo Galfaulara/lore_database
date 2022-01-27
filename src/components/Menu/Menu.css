@@ -57,7 +57,6 @@
   
   
   .dropdown-content {
-      visibility: collapse;
     align-items: center;
     
   }
@@ -69,10 +68,15 @@
   
   .dropmenu:hover .dropdown-content
   {
-visibility: visible;
+
+  transition: 0.75s;
+ 
+  }
+
+  .dropdown-content
+  {
 flex-direction: column;
   background-color: #333;
-  transition: 0.75s;
   position: absolute;
  top: 38px;
  left: 0px;

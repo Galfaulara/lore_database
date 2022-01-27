@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import './index.css';
+
+import { combineReducers, createStore } from 'redux';
+import { searchChampions, toggleDropdown } from './reducers'
+
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import './index.css';
-import { searchChampions } from './reducers'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const store = createStore(searchChampions)
+const rootReducer = combineReducers({ searchChampions, toggleDropdown })
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  
+
   <Provider store={store}>
-  <App/>
-</Provider>,
+    <App />
+  </Provider>,
 
   document.getElementById('root')
 );

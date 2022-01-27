@@ -1,1 +1,3 @@
 export const CHANGE_SEARCH_FIELD = 'CHANGE_SEARCH_FIELD';
+
+export const DROP_MENU_TOGGLE = true
