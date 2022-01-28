@@ -20,18 +20,11 @@ export const searchChampions = (state = initialStateSearch, action = {}) => {
 
 export const toggleDropdown = (state = initialToggle, action = {}) => {
 
-    if (action.Type && state.isDropdownvisible === false) {
-
-        return Object.assign({}, state, { isDropdownvisible: true })
-
-    }
-
-    else if (action.Type && state.isDropdownvisible === true) {
-        return Object.assign({}, state, { isDropdownvisible: false })
-    }
-
-    else {
-        return state
+    switch (action.type) {
+        case DROP_MENU_TOGGLE:
+            return Object.assign({}, state, { isDropdownvisible: !state.isDropdownvisible })
+        default:
+            return state
     }
 
 }

@@ -3,6 +3,7 @@ import './Menu.css';
 import React from 'react';
 
 export const Menu = ({ onSearchChange, isDropdownvisible, handleDropdownClick }) => {
+
     return (
         <div>
             <nav className="banner">
@@ -19,7 +20,7 @@ export const Menu = ({ onSearchChange, isDropdownvisible, handleDropdownClick })
                         {
                             isDropdownvisible &&
 
-                            (<div className="dropdown-content">
+                            (<div className="dropdown-content" onMouseLeave={handleDropdownClick}>
                                 <a className="element" href='null'>One</a>
                                 <a className="element" href='null'>Two</a>
                                 <a className="element" href='null'>Three</a>

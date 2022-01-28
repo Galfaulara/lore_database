@@ -5,6 +5,9 @@ export const setSearchField = (text) => ({
     payload: text
 })
 
-export const handleDropdownClick = () => (
-    { type: DROP_MENU_TOGGLE }
+export const handleDropdownClick = (val) => (
+    {
+        type: DROP_MENU_TOGGLE,
+        payload: val
+    }
 )
