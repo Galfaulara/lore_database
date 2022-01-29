@@ -1,3 +1,7 @@
 export const CHANGE_SEARCH_FIELD = 'CHANGE_SEARCH_FIELD';
 
 export const DROP_MENU_TOGGLE = 'DROP_MENU_TOGGLE';
+
+export const SET_HOME_PAGE = 'SET_HOME_PAGE';
+
+export const SET_CHAMPION_PAGE = 'SET_CHAMPION_PAGE';

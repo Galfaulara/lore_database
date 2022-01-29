@@ -1,5 +1,9 @@
-import { CHANGE_SEARCH_FIELD } from './constants'
-import { DROP_MENU_TOGGLE } from './constants'
+import {
+    CHANGE_SEARCH_FIELD,
+    DROP_MENU_TOGGLE,
+    SET_CHAMPION_PAGE,
+    SET_HOME_PAGE
+} from './constants'
 
 const initialStateSearch = {
     searchField: ''
@@ -7,6 +11,10 @@ const initialStateSearch = {
 
 const initialToggle = {
     isDropdownvisible: false,
+}
+
+const initialPage = {
+    championPage: '',
 }
 
 export const searchChampions = (state = initialStateSearch, action = {}) => {
@@ -28,3 +36,17 @@ export const toggleDropdown = (state = initialToggle, action = {}) => {
     }
 
 }
+
+export const setPage = (state = initialPage, action = {}) => {
+
+    switch (action.type) {
+        case SET_HOME_PAGE:
+            return Object.assign({}, state, { championPage: 'home' });
+        case SET_CHAMPION_PAGE:
+            return Object.assign({}, state, { championPage: 'notHome' })
+        default:
+            return state
+    }
+
+}
+

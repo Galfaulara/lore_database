@@ -1,7 +1,6 @@
-import { handleDropdown, setPageHome } from '../../actions'
-
-import { Menu } from './Menu'
+import { ChampionCard } from './ChampionCard'
 import { connect } from 'react-redux';
+import { setPageChampion } from '../../../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -12,14 +11,9 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleDropdown: () => dispatch(handleDropdown()),
-        setPageHome: () => dispatch(setPageHome()),
-
-
-
-
+        setPageChampion: () => dispatch(setPageChampion())
 
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Menu)
+export default connect(mapStateToProps, mapDispatchToProps)(ChampionCard);

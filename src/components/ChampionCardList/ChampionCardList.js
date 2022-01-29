@@ -1,7 +1,6 @@
-import './ChampionCardListCSS.css';
 import './ChampionCardCSS.css';
 
-import { ChampionCard } from './ChampionCard';
+import ChampionCard from './ChampionCard';
 import React from 'react'
 
 const ChampionCardList = ({ Champions }) => {

@@ -1,14 +1,14 @@
 import './index.css';
 
 import { combineReducers, createStore } from 'redux';
-import { searchChampions, toggleDropdown } from './reducers'
+import { searchChampions, setPage, toggleDropdown } from './reducers'
 
 import App from './App';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const rootReducer = combineReducers({ searchChampions, toggleDropdown })
+const rootReducer = combineReducers({ searchChampions, toggleDropdown, setPage })
 const store = createStore(rootReducer)
 
 ReactDOM.render(
