@@ -1,6 +1,7 @@
-import ChampionCard from './ChampionCard'
+import { setPageChampion, setSearchInitial } from '../../actions'
+
+import Background from './Background';
 import { connect } from 'react-redux';
-import { setPageChampion } from '../../../actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -11,9 +12,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         setPageChampion: (event) => dispatch(setPageChampion(event)),
+        setSearchInitial: () => dispatch(setSearchInitial())
 
     }
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChampionCard);
+export default connect(mapStateToProps, mapDispatchToProps)(Background);

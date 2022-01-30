@@ -1,5 +1,3 @@
-import './ChampionCardCSS.css';
-
 import ChampionCard from './ChampionCard';
 import React from 'react'
 

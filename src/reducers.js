@@ -2,7 +2,8 @@ import {
     CHANGE_SEARCH_FIELD,
     DROP_MENU_TOGGLE,
     SET_CHAMPION_PAGE,
-    SET_HOME_PAGE
+    SET_HOME_PAGE,
+    SET_SEARCH_INITIAL
 } from './constants'
 
 const initialStateSearch = {
@@ -14,13 +15,15 @@ const initialToggle = {
 }
 
 const initialPage = {
-    championPage: '',
+    championPage: 'home',
 }
 
 export const searchChampions = (state = initialStateSearch, action = {}) => {
     switch (action.type) {
         case CHANGE_SEARCH_FIELD:
             return Object.assign({}, state, { searchField: action.payload })
+        case SET_SEARCH_INITIAL:
+            return Object.assign({}, state, { searchField: '' })
         default:
             return state
     }
@@ -43,7 +46,9 @@ export const setPage = (state = initialPage, action = {}) => {
         case SET_HOME_PAGE:
             return Object.assign({}, state, { championPage: 'home' });
         case SET_CHAMPION_PAGE:
-            return Object.assign({}, state, { championPage: 'notHome' })
+            return Object.assign({}, state, { championPage: action.payload })
+
+
         default:
             return state
     }

@@ -1,5 +1,27 @@
 .BackgroundImg
 {
+    margin-top: 37px;
     height: 60vh;
     width: 100%;
     }
+
+    .ChampBackgroundImg{
+
+        margin-bottom: 0px;
+    height: 448.188px;
+    width: 200px;
+    }
+
+    .ChampPageContent{
+        margin-top: 38px;
+        height: 448.188px;
+        border: solid;
+        border-color: black;
+        animation-name: load;
+        animation-duration:0.75s;
+    }
+
+    @keyframes load{
+        from {width: 0px;}
+        to {width: 100%;} 
+     }

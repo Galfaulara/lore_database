@@ -3,8 +3,8 @@ import './App.css'
 import { useEffect, useState } from 'react';
 
 import Axios from 'axios';
-import Background from './components/Background/Background';
-import { ChampionCardList } from './components/ChampionCard/ChampionCardList';
+import Background from './components/Background';
+import ChampionCardList from './components/ChampionCardList';
 import Menu from './components/Menu';
 import React from 'react';
 import { connect } from 'react-redux';

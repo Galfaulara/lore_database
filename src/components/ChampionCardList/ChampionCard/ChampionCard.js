@@ -2,11 +2,11 @@ import './ChampionCardCSS.css'
 
 import React from 'react'
 
-export const ChampionCard = ({ name, title, id, setPageChampion }) => {
+export const ChampionCard = ({ name, title, id, setPageChampion, championPage }) => {
     return (
 
 
-        <div className='Card' onClick={setPageChampion} >
+        <div className='Card' onClick={() => setPageChampion({ name })} >
 
             <img className='ChampionCardBackground' alt='' src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg`} />
             <div className='CardText'>
@@ -18,4 +18,7 @@ export const ChampionCard = ({ name, title, id, setPageChampion }) => {
 
 
     )
-}    
+}
+
+export default ChampionCard
+

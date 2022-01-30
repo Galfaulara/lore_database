@@ -31,12 +31,14 @@ export const Menu = ({ onSearchChange, isDropdownvisible, handleDropdown, champi
                 </li>
                 {championPage === 'home' ?
                     (<input typeof='search' placeholder='Type Champion Name' onChange={onSearchChange} />)
+
                     :
-                    <li className="bannerElement">
-                        <button className="dropmenu" onClick={setPageHome}>Zones 2</button>
-                    </li>
+
+                    (< li className="bannerElement">
+                        <button className="dropmenu" onClick={setPageHome} >Set home</button>
+                    </li>)
                 }
             </nav>
-        </div>
+        </div >
     )
 }
