@@ -26,11 +26,9 @@ export const handleDropdown = () => (
 )
 
 export const setPageHome = () => (
-    console.log('setting homee'),
-
     {
         type: SET_HOME_PAGE,
-        payload: ''
+        payload: 'home'
     }
 )
 

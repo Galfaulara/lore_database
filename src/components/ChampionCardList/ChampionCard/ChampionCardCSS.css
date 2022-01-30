@@ -71,3 +71,10 @@ h2,p
     font-weight: bold;
     pointer-events: none !important;
 }
+
+.ChampionCardStyle{
+    display: flex;
+    flex-Direction: row;
+    flex-Wrap: wrap; 
+
+}

@@ -3,15 +3,15 @@ import React from 'react'
 
 const ChampionCardList = ({ Champions }) => {
 
-    const ChampionArray = Champions.map((champion, i) => {
+    const ChampionArray = Champions.map(({ name, title, image, id }) => {
         return (
 
             <ChampionCard
-                key={i}
-                name={Champions[i].name}
-                title={Champions[i].title}
-                image={Champions[i].image}
-                id={Champions[i].id}
+                key={id}
+                name={name}
+                title={title}
+                image={image}
+                id={id}
             />
 
         )
@@ -22,7 +22,7 @@ const ChampionCardList = ({ Champions }) => {
 
 
     return (
-        <div className='ChampionCardStyle' id='hoverable' style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+        <div className='ChampionCardStyle' id='hoverable' >
             {ChampionArray}
         </div>
     )

@@ -44,7 +44,7 @@ export const setPage = (state = initialPage, action = {}) => {
 
     switch (action.type) {
         case SET_HOME_PAGE:
-            return Object.assign({}, state, { championPage: 'home' });
+            return Object.assign({}, state, { championPage: action.payload });
         case SET_CHAMPION_PAGE:
             return Object.assign({}, state, { championPage: action.payload })
 

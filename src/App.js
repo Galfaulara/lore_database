@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import Axios from 'axios';
 import Background from './components/Background';
+import { CHAMPS_URL } from './constants';
 import ChampionCardList from './components/ChampionCardList';
 import Menu from './components/Menu';
 import React from 'react';
@@ -36,7 +37,7 @@ function App(props) {
 
 
   const getChampions = () => {
-    Axios.get("http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json").then(
+    Axios.get(CHAMPS_URL).then(
       (Response) => {
 
         // console.log(Response);

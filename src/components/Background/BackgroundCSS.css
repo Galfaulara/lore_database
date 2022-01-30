@@ -19,6 +19,7 @@
         border-color: black;
         animation-name: load;
         animation-duration:0.75s;
+    
     }
 
     @keyframes load{
