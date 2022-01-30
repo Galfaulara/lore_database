@@ -63,12 +63,11 @@ const App = ({onSearchChange, searchField}) => {
 
 
   return (
-    <div className='Content'>
-      <Menu onSearchChange={onSearchChange} />
-      <Background />
-      <ChampionCardList champions={ChampionFilter} />
-    </div>
-
+      <div className='Content'>
+        <Menu onSearchChange={onSearchChange} />
+        <Background />
+        <ChampionCardList champions={ChampionFilter} />
+      </div>
   )
 }
 

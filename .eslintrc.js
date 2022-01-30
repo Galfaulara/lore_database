@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 module.exports = {
   'env': {
     'browser': true,
@@ -18,6 +19,10 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'prefer-promise-reject-errors': 'off',
+    'no-tabs': 'off',
+    'no-mixed-spaces-and-tabs': 'off',
+    'indent': 'off',
     'semi': ['error', 'never'],
     'require-jsdoc': 'off',
     'array-callback-return': [
