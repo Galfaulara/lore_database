@@ -1,31 +1,36 @@
-import ChampionCard from './ChampionCard';
+import ChampionCard from './ChampionCard'
+import PropTypes from 'prop-types'
 import React from 'react'
 
-const ChampionCardList = ({ Champions }) => {
-
-    const ChampionArray = Champions.map(({ name, title, image, id }) => {
-        return (
-
-            <ChampionCard
-                key={id}
-                name={name}
-                title={title}
-                image={image}
-                id={id}
-            />
-
-        )
-
-
-    });
-
-
-
+const ChampionCardList = ({champions}) => {
+  const championsArray = champions.map(({name, title, image, id}) => {
     return (
-        <div className='ChampionCardStyle' id='hoverable' >
-            {ChampionArray}
-        </div>
+
+      <ChampionCard
+        key={id}
+        name={name}
+        title={title}
+        image={image}
+        id={id}
+      />
+
     )
+  })
+
+
+  return (
+    <div className='ChampionCardStyle' id='hoverable' >
+      {championsArray}
+    </div>
+  )
 }
 
-export { ChampionCardList };
+ChampionCardList.defaultProps = {
+  champions: [],
+}
+
+ChampionCardList.propTypes = {
+  champions: PropTypes.array.isRequired,
+}
+
+export {ChampionCardList}

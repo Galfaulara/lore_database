@@ -1,3 +1,3 @@
-import { ChampionCardList } from './ChampionCardList'
+import {ChampionCardList} from './ChampionCardList'
 
-export default ChampionCardList;
+export default ChampionCardList

@@ -18,6 +18,8 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'semi': ['error', 'never'],
+    'require-jsdoc': 'off',
     'array-callback-return': [
       'error',
       {
@@ -57,4 +59,4 @@ module.exports = {
     'react/display-name': 'off',
     'sort-imports': 'error',
   },
-};
+}

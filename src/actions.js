@@ -1,42 +1,42 @@
 import {
-    CHANGE_SEARCH_FIELD,
-    DROP_MENU_TOGGLE,
-    SET_CHAMPION_PAGE,
-    SET_HOME_PAGE,
-    SET_SEARCH_INITIAL
+  CHANGE_SEARCH_FIELD,
+  DROP_MENU_TOGGLE,
+  SET_CHAMPION_PAGE,
+  SET_HOME_PAGE,
+  SET_SEARCH_INITIAL,
 } from './constants'
 
 export const setSearchField = (text) => ({
-    type: CHANGE_SEARCH_FIELD,
-    payload: text
+  type: CHANGE_SEARCH_FIELD,
+  payload: text,
 })
 
 export const setSearchInitial = () => (
-    {
-        type: SET_SEARCH_INITIAL,
-        payload: ''
-    }
+  {
+    type: SET_SEARCH_INITIAL,
+    payload: '',
+  }
 )
 
 export const handleDropdown = () => (
-    {
-        type: DROP_MENU_TOGGLE,
-        payload: ''
-    }
+  {
+    type: DROP_MENU_TOGGLE,
+    payload: '',
+  }
 )
 
 export const setPageHome = () => (
-    {
-        type: SET_HOME_PAGE,
-        payload: 'home'
-    }
+  {
+    type: SET_HOME_PAGE,
+    payload: 'home',
+  }
 )
 
 export const setPageChampion = (champion) => (
-    console.log(champion.name),
+  console.log(champion.name),
 
-    {
-        type: SET_CHAMPION_PAGE,
-        payload: champion.name
-    }
+  {
+    type: SET_CHAMPION_PAGE,
+    payload: champion.name,
+  }
 )

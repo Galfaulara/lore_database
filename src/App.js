@@ -1,15 +1,15 @@
 import './App.css'
 
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react'
 
-import Axios from 'axios';
-import Background from './components/Background';
-import { CHAMPS_URL } from './constants';
-import ChampionCardList from './components/ChampionCardList';
-import Menu from './components/Menu';
-import React from 'react';
-import { connect } from 'react-redux';
-import { setSearchField } from './actions';
+import Axios from 'axios'
+import Background from './components/Background'
+import ChampionCardList from './components/ChampionCardList'
+import Menu from './components/Menu'
+import PropTypes from 'prop-types'
+import React from 'react'
+import {connect} from 'react-redux'
+import {setSearchField} from './actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -24,54 +24,41 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
+const App = ({onSearchChange, searchField}) => {
+  const [championsDisplay, setChampionDisplay] = useState([])
+  let Champions = []
 
-
-function App(props) {
-  const { onSearchChange, searchField } = props;
-
-  const [championsDisplay, setChampionDisplay] = useState([]);
-  // const [searchValue, setSearchValue] = useState('');
-
-  let Champions = [];
-
-
+  const CHAMPIONS_URL = 'http://ddragon.leagueoflegends.com/cdn/11.24.1/data/en_US/champion.json'
 
   const getChampions = () => {
-    Axios.get(CHAMPS_URL).then(
-      (Response) => {
+    Axios.get(CHAMPIONS_URL).then(
+        (Response) => {
+          // console.log(Response)
 
-        // console.log(Response);
+          Champions = Object.keys(Response.data.data).map((name) => {
+            const champion = Response.data.data[name]
 
-        Champions = Object.keys(Response.data.data).map((name) => {
-          const champion = Response.data.data[name]
-
-          return {
-            name: champion.name,
-            title: champion.title,
-            id: champion.id,
-          }
-
-
-        });
-        setChampionDisplay(Champions)
-        console.log(Champions);
-      }
+            return {
+              name: champion.name,
+              title: champion.title,
+              id: champion.id,
+            }
+          })
+          setChampionDisplay(Champions)
+          console.log(Champions)
+        },
     )
   }
 
 
   useEffect(() =>
-    getChampions(), []
+    getChampions(), [],
   )
 
-  // const onSearchChange = (event) => {
-  //   setSearchValue(event.target.value);
-  //   console.log(event.target.value)
-  // };
-
-  const ChampionFilter = championsDisplay.filter(championDisplayed => {
-    return (championDisplayed.name.toLowerCase().includes(searchField.toLowerCase()))
-
+  const ChampionFilter = championsDisplay.filter((championDisplayed) => {
+    return (
+      championDisplayed.name.toLowerCase().includes(searchField.toLowerCase())
+    )
   })
 
 
@@ -79,11 +66,19 @@ function App(props) {
     <div className='Content'>
       <Menu onSearchChange={onSearchChange} />
       <Background />
-      <ChampionCardList Champions={ChampionFilter} />
+      <ChampionCardList champions={ChampionFilter} />
     </div>
 
-  );
+  )
+}
 
+App.defaultProps = {
+  searchField: '',
+}
+
+App.propTypes = {
+  onSearchChange: PropTypes.func.isRequired,
+  searchField: PropTypes.string.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
