@@ -1,14 +1,18 @@
 import './ChampionCardCSS.css'
 
+import {CHAMP_BCKGRND_URL} from '../../../constants'
 import React from 'react'
 
-export const ChampionCard = ({ name, title, id, setPageChampion, championPage }) => {
+export const ChampionCard = ({name, title, id, setPageChampion}) => {
     return (
 
 
-        <div className='Card' onClick={() => setPageChampion({ name })} >
+        <div className='Card' onClick={() => setPageChampion({name})} >
 
-            <img className='ChampionCardBackground' alt='' src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${id}_0.jpg`} />
+            <img
+            className='ChampionCardBackground' alt=''
+            src={`${CHAMP_BCKGRND_URL}${id}_0.jpg`}
+            />
             <div className='CardText'>
                 <h2>{name}</h2>
                 <p>{title}</p>
@@ -19,6 +23,14 @@ export const ChampionCard = ({ name, title, id, setPageChampion, championPage })
 
     )
 }
+
+
+  ChampionCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    setPageChampion: PropTypes.func.isRequired,
+  }
 
 export default ChampionCard
 

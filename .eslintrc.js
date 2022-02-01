@@ -19,6 +19,7 @@ module.exports = {
     'react',
   ],
   'rules': {
+    'linebreak-style': 0,
     'prefer-promise-reject-errors': 'off',
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': 'off',
