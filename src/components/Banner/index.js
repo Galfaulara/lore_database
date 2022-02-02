@@ -1,6 +1,6 @@
 import {setPageChampion, setSearchInitial} from '../../actions'
 
-import ChampionDetail from './ChampionPageSection'
+import Banner from './Banner'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChampionDetail)
+export default connect(mapStateToProps, mapDispatchToProps)(Banner)

@@ -1,7 +1,7 @@
 import {CHAMP_BCKGRND_URL} from '../../constants'
 import React from 'react';
 
-function ChampionPage({championPage}) {
+function ChampionDetail({championPage, setSearchInitial}) {
   return <div className='ChampPageContent'>
   <img
       className='ChampBackgroundImg'
@@ -12,4 +12,4 @@ function ChampionPage({championPage}) {
   </div>;
 }
 
-export default ChampionPage;
+export default ChampionDetail;

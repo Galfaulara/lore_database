@@ -9,7 +9,7 @@ import React from 'react'
 export const ChampionCard = ({name, title, id, setPageChampion}) => {
     return (
 <Router>
-<Link to={`${name}`} style={{ textDecoration: 'none', outline:'none'}}>
+<Link to={`${name}`} className='Link'>
 <div  className='Card' onClick={() => setPageChampion({name})} >
 
     <img

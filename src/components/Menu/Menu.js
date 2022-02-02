@@ -15,7 +15,12 @@ const Menu = ({
 	return (
         <div>
           <nav className="banner">
+          <Router>
+                  <Link to='/' style={{textDecoration: 'none'}} >
             <li className="bannerElement"><a href='null' >Home</a></li>
+            </Link>
+                </Router>
+
             <li className="bannerElement"><a href='null'>Champions</a></li>
             <li className="bannerElement"><a href='null'>Zones</a></li>
             <li className="bannerElement">

@@ -7,12 +7,7 @@ import React from 'react'
 const Background = ({championPage, setSearchInitial}) => {
   return (
         championPage === 'home' ?
-            (<img
-                className='BackgroundImg'
-                alt='Background'
-                src='./assets/images/Noxus_Landscape2.jpg'
-                onLoad={setSearchInitial}
-            />) :
+            (<Banner/>) :
             (<ChampionPageSection/>)
   )
 }

@@ -67,13 +67,7 @@ const App = ({onSearchChange, searchField}) => {
     
       <div className='Content'>
         <Menu onSearchChange={onSearchChange} />
-        <Router>
-        <Routes> 
-          <Route exact path="/" element={<Background/>}/>
-        </Routes>
-        </Router>
-       
-      
+          <Background/>
         <ChampionCardList champions={ChampionFilter} />
       </div>
    
