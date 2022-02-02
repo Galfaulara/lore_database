@@ -67,7 +67,7 @@ const App = ({onSearchChange, searchField}) => {
     
       <div className='Content'>
         <Menu onSearchChange={onSearchChange} />
-          <Background/>
+        <Background/>
         <ChampionCardList champions={ChampionFilter} />
       </div>
    

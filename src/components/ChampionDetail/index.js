@@ -1,6 +1,6 @@
 import {setPageChampion, setSearchInitial} from '../../actions'
 
-import ChampionDetail from './ChampionPageSection'
+import ChampionDetail from './ChampionDetail'
 import {connect} from 'react-redux'
 
 const mapStateToProps = (state) => {

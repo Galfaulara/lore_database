@@ -17,7 +17,7 @@ const Menu = ({
           <nav className="banner">
           <Router>
                   <Link to='/' style={{textDecoration: 'none'}} >
-            <li className="bannerElement"><a href='null' >Home</a></li>
+            <li className="bannerElement"><a href='null' onClick={setPageHome}>Home</a></li>
             </Link>
                 </Router>
 
