@@ -1,5 +1,6 @@
 import './BackgroundCSS.css'
 
+import Banner from '../Banner'
 import ChampionPageSection from '../ChampionPageSection'
 import PropTypes from 'prop-types'
 import React from 'react'
