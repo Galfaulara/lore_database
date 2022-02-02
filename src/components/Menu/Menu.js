@@ -1,5 +1,7 @@
 import './Menu.css'
 
+import { Link, BrowserRouter as Router } from 'react-router-dom'
+
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -43,12 +45,17 @@ const Menu = ({
                 />
                 ) :
                 (
-                < li className="bannerElement">
+                <Router>
+                  <Link to='/' >
+                  < li className="bannerElement">
                   <button
                     className="dropmenu"
                     onClick={setPageHome}
-                  >Set home</button>
+                  >Search</button>
                 </li>
+                </Link>
+                </Router>
+              
                 )
             }
           </nav>

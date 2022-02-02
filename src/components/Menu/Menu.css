@@ -108,7 +108,9 @@ padding-right: 0px;
     border: none;
     position: relative;
     top: 25%;
+  }
+
+  .HomeBtn{
+    order: 1;
     
-    
-   
   }

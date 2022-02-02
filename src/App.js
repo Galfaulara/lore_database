@@ -1,5 +1,6 @@
 import './App.css'
 
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
 import Axios from 'axios'
@@ -63,11 +64,19 @@ const App = ({onSearchChange, searchField}) => {
 
 
   return (
+    
       <div className='Content'>
         <Menu onSearchChange={onSearchChange} />
-        <Background />
+        <Router>
+        <Routes> 
+          <Route exact path="/" element={<Background/>}/>
+        </Routes>
+        </Router>
+       
+      
         <ChampionCardList champions={ChampionFilter} />
       </div>
+   
   )
 }
 
