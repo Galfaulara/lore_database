@@ -6,7 +6,9 @@ import {
   SET_SEARCH_INITIAL,
 } from './constants'
 
-export const setSearchField = (text) => ({
+export const setSearchField = (text) => (
+  
+  {
   type: CHANGE_SEARCH_FIELD,
   payload: text,
 })
@@ -33,7 +35,6 @@ export const setPageHome = () => (
 )
 
 export const setPageChampion = (champion) => (
-  console.log(champion.name),
 
   {
     type: SET_CHAMPION_PAGE,

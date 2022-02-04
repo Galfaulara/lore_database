@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom'
 const rootReducer = combineReducers({searchChampions, toggleDropdown, setPage})
 const store = createStore(rootReducer)
 
+
 ReactDOM.render(
 
   <Provider store={store}>

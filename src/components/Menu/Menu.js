@@ -16,9 +16,16 @@ const Menu = ({
         <div>
           <nav className="banner">
           <Router>
-                  <Link to='/' style={{textDecoration: 'none'}} >
-            <li className="bannerElement"><a href='null' onClick={setPageHome}>Home</a></li>
+                 
+            <li className="bannerElement">
+           <Link to='/' 
+           style={{textDecoration: 'none'}} 
+           onClick={setPageHome}  
+           className='bannerElement'>
+            Home
             </Link>
+              
+              </li>
                 </Router>
 
             <li className="bannerElement"><a href='null'>Champions</a></li>

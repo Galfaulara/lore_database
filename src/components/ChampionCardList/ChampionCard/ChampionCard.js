@@ -6,10 +6,13 @@ import {CHAMP_BCKGRND_URL} from '../../../constants'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const ChampionCard = ({name, title, id, setPageChampion}) => {
+export const ChampionCard = ({name, title, id, setPageChampion, championPage}) => {
     return (
 <Router>
-<Link to={`${name}`} className='Link'>
+<Link    to={{ pathname: `${name}`, 
+    state: { championPage: `${name}` } 
+  }}  className='Link'>
+
 <div  className='Card' onClick={() => setPageChampion({name})} >
 
     <img
