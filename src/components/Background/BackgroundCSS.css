@@ -1,20 +1,22 @@
 .BackgroundImg
 {
     margin-top: 37px;
-    height: 60vh;
+    max-height: 348.188px;
     width: 100%;
     }
 
     .ChampBackgroundImg{
 
         margin-bottom: 0px;
-    height: 448.188px;
-    width: 200px;
+        height: auto;
+        width: auto;
+    max-height: 348.188px;
+    max-width: 200px;
     }
 
     .ChampPageContent{
         margin-top: 38px;
-        height: 448.188px;
+        height: 348.188px;
         border: solid;
         border-color: black;
         animation-name: load;
