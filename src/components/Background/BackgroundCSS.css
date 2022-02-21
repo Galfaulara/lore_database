@@ -12,6 +12,7 @@
         width: auto;
     max-height: 348.188px;
     max-width: 200px;
+    border-bottom-left-radius: 0px;
     }
 
     .ChampPageContent{
@@ -21,7 +22,8 @@
         border-color: black;
         animation-name: load;
         animation-duration:0.75s;
-    
+        border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0px;
     }
 
     @keyframes load{

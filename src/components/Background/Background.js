@@ -4,11 +4,12 @@ import Banner from '../Banner'
 import ChampionDetail from '../ChampionDetail'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { SliderData } from '../Banner/SliderData'
 
 const Background = ({championPage, setSearchInitial}) => {
   return (
         championPage === 'home' ?
-            (<Banner/>) :
+            (<Banner slides={SliderData}/>) :
             (<ChampionDetail/>)
   )
 }

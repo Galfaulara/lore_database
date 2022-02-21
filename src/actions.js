@@ -35,9 +35,10 @@ export const setPageHome = () => (
 )
 
 export const setPageChampion = (champion) => (
+  console.log(champion.id),
 
   {
     type: SET_CHAMPION_PAGE,
-    payload: champion.name,
+    payload: champion.id,
   }
 )

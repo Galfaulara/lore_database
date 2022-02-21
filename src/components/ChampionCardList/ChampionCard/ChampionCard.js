@@ -9,11 +9,11 @@ import React from 'react'
 export const ChampionCard = ({name, title, id, setPageChampion, championPage}) => {
     return (
 <Router>
-<Link    to={{ pathname: `${name}`, 
-    state: { championPage: `${name}` } 
+<Link    to={{ pathname: `${id}`, 
+    state: { championPage: `${id}` } 
   }}  className='Link'>
 
-<div  className='Card' onClick={() => setPageChampion({name})} >
+<div  className='Card' onClick={() => setPageChampion({id})} >
 
     <img
     className='ChampionCardBackground' alt=''

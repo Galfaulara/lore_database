@@ -1,23 +1,24 @@
 import './App.css'
 
+import {setPageChampion, setSearchField} from './actions'
 import {useEffect, useState} from 'react'
 
 import Axios from 'axios'
 import Background from './components/Background'
 import {CHAMPS_URL} from './constants'
 import ChampionCardList from './components/ChampionCardList'
+import ChampionDetail from './components/ChampionDetail'
 import Menu from './components/Menu'
 import Pagination from './components/Pagination'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {connect} from 'react-redux'
-import {setSearchField} from './actions'
 
-const App = ({onSearchChange, searchField}) => {
+const App = ({onSearchChange, searchField, championPage}) => {
   let Champions = []
   const [championsDisplay, setChampionDisplay] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
-  const [championsPerPage] = useState(9);
+  const [championsPerPage, setChampionsPerPage] = useState(0);
 
   const getChampions = () => {
     Axios.get(CHAMPS_URL).then(
@@ -39,6 +40,7 @@ const App = ({onSearchChange, searchField}) => {
     )
   }
 
+  const championsPerPageCalc = window.innerWidth/125;
 
   useEffect(() =>
     getChampions(), [],
@@ -47,6 +49,12 @@ const App = ({onSearchChange, searchField}) => {
   useEffect(() =>
   setCurrentPage(1), [searchField],
 )
+
+useEffect(() =>
+setChampionsPerPage(championsPerPageCalc), [searchField],
+)
+
+
 
   const ChampionFilter = championsDisplay.filter((championDisplayed) => {
     return (
@@ -59,6 +67,7 @@ const App = ({onSearchChange, searchField}) => {
   const currentChampions = ChampionFilter.slice(indexOfFirstChampion, indexOfLastChampion);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+ 
  
 
 
@@ -90,6 +99,8 @@ const App = ({onSearchChange, searchField}) => {
 const mapStateToProps = (state) => {
   return {
     searchField: state.searchChampions.searchField,
+    championPage: state.setPage.championPage,
+
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -106,6 +117,7 @@ App.defaultProps = {
 App.propTypes = {
   onSearchChange: PropTypes.func.isRequired,
   searchField: PropTypes.string.isRequired,
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
