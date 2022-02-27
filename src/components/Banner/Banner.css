@@ -36,7 +36,7 @@
   }
   
   .slide {
-    opacity: 0.1;
+    opacity: 0;
     transition-duration: 1s ease;
   }
   

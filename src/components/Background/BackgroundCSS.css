@@ -1,32 +1,34 @@
-.BackgroundImg
-{
+.BackgroundImg{
     margin-top: 37px;
     max-height: 348.188px;
-    width: 100%;
-    }
+}
 
-    .ChampBackgroundImg{
+.ChampBackgroundImg{
 
-        margin-bottom: 0px;
-        height: auto;
-        width: auto;
-    max-height: 348.188px;
-    max-width: 200px;
-    border-bottom-left-radius: 0px;
-    }
+    margin-bottom: 0px;
+    height: 50vh;
+    border-radius: 20px;
 
-    .ChampPageContent{
-        margin-top: 38px;
-        height: 348.188px;
-        border: solid;
-        border-color: black;
-        animation-name: load;
-        animation-duration:0.75s;
-        border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 0px;
-    }
+}
 
-    @keyframes load{
-        from {width: 0px;}
-        to {width: 100%;} 
-     }
+.ChampPageContent{
+    margin-top: 50px;
+    height: 50vh;
+    border: solid;
+    border-color: black;
+    border-radius: 25px;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    animation-name: load;
+    animation-duration: 0.75s;
+    max-width: calc(85vw - 6px);
+    
+
+}
+
+@keyframes load{
+    from {width: 0%;}
+    to {width: 100vw}
+}
+
+  
