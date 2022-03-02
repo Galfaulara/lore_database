@@ -1,58 +1,69 @@
 import './App.css'
 
-import {setPageChampion, setSearchField} from './actions'
 import {useEffect, useState} from 'react'
 
 import Axios from 'axios'
 import Background from './components/Background'
 import {CHAMPS_URL} from './constants'
 import ChampionCardList from './components/ChampionCardList'
-import ChampionDetail from './components/ChampionDetail'
 import Menu from './components/Menu'
 import Pagination from './components/Pagination'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {connect} from 'react-redux'
+import {setSearchField} from './actions'
 
 const App = ({onSearchChange, searchField, championPage}) => {
-  let Champions = []
   const [championsDisplay, setChampionDisplay] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [championsPerPage, setChampionsPerPage] = useState(0);
 
-  const getChampions = () => {
-    Axios.get(CHAMPS_URL).then(
-        (Response) => {
-          // console.log(Response)
+  const getChampions = async () => {
+    const CHAMPS_DATA = await Axios.get(CHAMPS_URL); 
 
-          Champions = Object.keys(Response.data.data).map((name) => {
-            const champion = Response.data.data[name]
 
-            return {
-              name: champion.name,
-              title: champion.title,
-              id: champion.id,
-            }
-          })
-          setChampionDisplay(Champions)
-          console.log(Champions)
-        },
-    )
-  }
+      const Champions = Object.keys(CHAMPS_DATA.data.data).map((name) => {
+        const champion = CHAMPS_DATA.data.data[name]
 
-  const championsPerPageCalc = window.innerWidth/125;
+
+        return {
+          name: champion.name,
+          title: champion.title,
+          id: champion.id,
+          blurb: champion.blurb
+        }
+
+        
+      })//Map End    
+
+      const dbresponse = await Axios.post('http://localhost:3000/', Champions)
+      console.log(dbresponse)
+    setChampionDisplay(Champions);
+
+   
+  };
+
 
   useEffect(() =>
-    getChampions(), [],
-  )
+  getChampions(), [],
+)
 
-  useEffect(() =>
-  setCurrentPage(1), [searchField],
+
+
+useEffect(() =>
+setCurrentPage(1), [searchField],
 )
 
 useEffect(() =>
 setChampionsPerPage(championsPerPageCalc), [searchField],
 )
+
+  const championsPerPageCalc = window.innerWidth/125;
+
+
+
+
+
 
 
 
