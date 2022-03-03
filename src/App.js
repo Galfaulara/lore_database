@@ -1,6 +1,6 @@
 import './App.css'
 
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import Axios from 'axios'
 import Background from './components/Background'
@@ -9,11 +9,10 @@ import ChampionCardList from './components/ChampionCardList'
 import Menu from './components/Menu'
 import Pagination from './components/Pagination'
 import PropTypes from 'prop-types'
-import React from 'react'
 import {connect} from 'react-redux'
 import {setSearchField} from './actions'
 
-const App = ({onSearchChange, searchField, championPage}) => {
+const App = ({onSearchChange, searchField}) => {
   const [championsDisplay, setChampionDisplay] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [championsPerPage, setChampionsPerPage] = useState(0);
@@ -24,8 +23,7 @@ const App = ({onSearchChange, searchField, championPage}) => {
 
       const Champions = Object.keys(CHAMPS_DATA.data.data).map((name) => {
         const champion = CHAMPS_DATA.data.data[name]
-
-
+        
         return {
           name: champion.name,
           title: champion.title,
@@ -37,10 +35,10 @@ const App = ({onSearchChange, searchField, championPage}) => {
       })//Map End    
 
       const dbresponse = await Axios.post('http://localhost:3000/', Champions)
-      console.log(dbresponse)
+      console.log(dbresponse.data)
     setChampionDisplay(Champions);
 
-   
+   return true;
   };
 
 
@@ -57,37 +55,18 @@ setCurrentPage(1), [searchField],
 useEffect(() =>
 setChampionsPerPage(championsPerPageCalc), [searchField],
 )
-
   const championsPerPageCalc = window.innerWidth/125;
-
-
-
-
-
-
-
-
+  const indexOfLastChampion = currentPage * championsPerPage;
+  const indexOfFirstChampion = indexOfLastChampion - championsPerPage;
   const ChampionFilter = championsDisplay.filter((championDisplayed) => {
     return (
       championDisplayed.name.toLowerCase().includes(searchField.toLowerCase())
     )
   })
 
-  const indexOfLastChampion = currentPage * championsPerPage;
-  const indexOfFirstChampion = indexOfLastChampion - championsPerPage;
-  const currentChampions = ChampionFilter.slice(indexOfFirstChampion, indexOfLastChampion);
-
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const currentChampions = ChampionFilter.slice(indexOfFirstChampion, indexOfLastChampion);
  
- 
-
-
-  
-  
-
-
-
-
   return (
     
       <div className='Content'>
