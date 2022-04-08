@@ -43,17 +43,20 @@ const App = ({onSearchChange, searchField}) => {
 
 
   useEffect(() =>
-  getChampions(), [],
+  getChampions(), 
+  [],
 )
 
 
 
 useEffect(() =>
-setCurrentPage(1), [searchField],
+setCurrentPage(1), 
+[searchField],
 )
 
 useEffect(() =>
-setChampionsPerPage(championsPerPageCalc), [searchField],
+setChampionsPerPage(championsPerPageCalc), 
+[searchField],
 )
   const championsPerPageCalc = window.innerWidth/125;
   const indexOfLastChampion = currentPage * championsPerPage;
